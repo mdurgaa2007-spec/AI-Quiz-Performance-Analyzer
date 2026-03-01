@@ -161,6 +161,11 @@ public:
                 }
             }
             file.close();
+            
+            // Sort users by percentage in descending order after loading
+            sort(users.begin(), users.end(), [](const User& a, const User& b) {
+                return a.getPercentage() > b.getPercentage();
+            });
         }
     }
 
@@ -171,11 +176,6 @@ public:
             cout << "\nNo leaderboard data available yet!" << endl;
             return;
         }
-
-        // Sort users by percentage in descending order
-        sort(users.begin(), users.end(), [](const User& a, const User& b) {
-            return a.getPercentage() > b.getPercentage();
-        });
 
         cout << "\n========================================" << endl;
         cout << "          LEADERBOARD" << endl;
@@ -359,10 +359,9 @@ int main() {
             continue;
         }
 
-        cin.ignore();
-
         switch (choice) {
             case 1: {
+                cin.ignore(); // Clear newline for getline
                 string userName;
                 cout << "\nEnter your name: ";
                 getline(cin, userName);
