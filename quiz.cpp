@@ -23,7 +23,7 @@ class Quiz {
     int score = 0;
 
 public:
-    void addQuestion(string q, string o1, string o2, string o3, string o4, int correct) {
+    void addQuestion(const string& q, const string& o1, const string& o2, const string& o3, const string& o4, int correct) {
         Question ques;
         ques.question = q;
         ques.option1 = o1;
@@ -34,13 +34,21 @@ public:
         questions.push_back(ques);
     }
 
-    void startQuiz(string username) {
+    void startQuiz(const string& username) {
         int answer;
 
         for (size_t i = 0; i < questions.size(); i++) {
             questions[i].display();
             cout << "Enter your answer: ";
             cin >> answer;
+
+            // Validate input
+            if (cin.fail() || answer < 1 || answer > 4) {
+                cin.clear();
+                cin.ignore(10000, '\n');
+                cout << "Invalid input! Skipping this question.\n";
+                continue;
+            }
 
             if (answer == questions[i].correctOption) {
                 cout << "Correct! 🎉\n";
@@ -67,8 +75,12 @@ public:
             cout << "Needs Improvement 💪 Practice More!\n";
     }
 
-    void saveToFile(string username) {
+    void saveToFile(const string& username) {
         ofstream file("leaderboard.txt", ios::app);
+        if (!file.is_open()) {
+            cerr << "Error: Unable to save score to leaderboard.\n";
+            return;
+        }
         file << username << " - Score: " << score << endl;
         file.close();
     }
