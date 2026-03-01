@@ -1,0 +1,25 @@
+# Compiled executables
+quiz_analyzer
+*.exe
+*.out
+
+# Object files
+*.o
+*.obj
+
+# Leaderboard data (optional - remove this line if you want to track it)
+# leaderboard.txt
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
