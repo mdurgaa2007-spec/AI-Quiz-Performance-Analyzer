@@ -32,6 +32,7 @@ public:
         ques.option2 = o2;
         ques.option3 = o3;
         ques.option4 = o4;
+        ques.option5 = o5;
         ques.correctOption = correct;
         questions.push_back(ques);
     }
