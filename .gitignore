@@ -1,0 +1,28 @@
+# Compiled executables
+quiz_analyzer
+*.exe
+*.out
+
+# Object files
+*.o
+*.obj
+
+# Leaderboard data (user-generated data)
+leaderboard.txt
+
+# CodeQL files
+_codeql_detected_source_root
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
