@@ -1,0 +1,19 @@
+# Build artifacts
+*.o
+*.exe
+quiz
+a.out
+
+# Leaderboard data file
+leaderboard.txt
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
