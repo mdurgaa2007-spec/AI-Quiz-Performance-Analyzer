@@ -7,8 +7,11 @@ quiz_analyzer
 *.o
 *.obj
 
-# Leaderboard data (optional - remove this line if you want to track it)
-# leaderboard.txt
+# Leaderboard data (user-generated data)
+leaderboard.txt
+
+# CodeQL files
+_codeql_detected_source_root
 
 # IDE files
 .vscode/
